@@ -1,8 +1,7 @@
 import React from "react";
 import Moment from "react-moment";
 import "./style.css";
-
-function Table (props) {
+function Table(props) {
   return (
     <table className="datatable">
       <thead>
@@ -19,16 +18,15 @@ function Table (props) {
         </tr>
       </thead>
       <tbody>
-        {props.employees &&
-          props.employees.length &&
-          props.employees.map((employee, i) => (
-            <Employee key={`employee-${i}`} employee={employee} />
-          ))}
+        {props.users.length
+          ? props.users.map((employee, i) => (
+              <Employee key={`employee-${i}`} employee={employee} />
+            ))
+          : null}
       </tbody>
     </table>
   );
 }
-
 const Employee = ({ employee }) => {
   return (
     <tr>
@@ -51,5 +49,4 @@ const Employee = ({ employee }) => {
     </tr>
   );
 };
-
 export default Table;
