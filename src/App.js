@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
 import Header from "./components/Header";
-// import SearchBar from "./components/Search";
 import Body from "./components/Body";
 class App extends Component {
   state = {
@@ -15,7 +14,6 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        {/* <SearchBar onSearchCallback={this.onSearchCallback} /> */}
         <Body searchData={this.state.searchData} />
       </div>
     );

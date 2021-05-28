@@ -7,17 +7,7 @@ export default class Body extends Component {
     users: [],
     filteredUsers: [],
   };
-  filterResults = (e) => {
-    // console.log(e.target.value);
-    const input = e.target.value;
-    const filteredList = this.state.users.filter((user) => {
-      let values = Object.values(user).join("").toLowerCase();
-      return values.indexOf(input.toLowerCase()) !== -1;
-    });
-    this.setState({
-      filteredUsers: filteredList,
-    });
-  };
+  
   componentDidMount() {
     API.getUsers().then((res) => {
       console.log(res.data);
@@ -25,7 +15,6 @@ export default class Body extends Component {
         users: res.data.results,
         filteredUsers: res.data.results,
       });
-      //   console.log(this.state);
     });
   }
   render() {
